@@ -4,7 +4,7 @@
  * Free to use under the MIT license
  */
 @import url(font-awesome.min.css);
-@import url(https://fonts.googleapis.com/css?family=Muli);
+/* Offline-safe system font stack. */
 *{
     color: #ffffff;
     font-family: Muli, sans-serif;
@@ -16,7 +16,7 @@
 }
 body{
     background-attachment: fixed;
-    background-image: url(../../images/wallpaper.png);
+    background-image: url(../../images/wallpaper.webp);
     background-repeat: no-repeat;
     color: #000000;
     font-family: "Muli", sans-serif;
@@ -85,3 +85,9 @@ p{
 .youtube:hover{
     color: #cd201f;
 }
+/* About page: responsive and keyboard accessible. */
+body { background-size: cover; min-height: 100svh; padding: 1rem; box-sizing: border-box; }
+#avatar img { max-width: min(75vw, 320px); height: auto; }
+#content { width: min(100%, 60ch); }
+a:focus-visible { outline: 2px solid #fff; outline-offset: 4px; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }

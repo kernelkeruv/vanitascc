@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,900");
+/* System font fallback, no external CDN dependencies. */
 @import url("fontawesome-all.min.css");
 
 /*
@@ -226,7 +226,7 @@ input, select, textarea {
 		transform: translate3d(0,0,0);
 	/* Set your background with this */
 
-		background: #348cb2 url("images/bg.jpg") bottom left;
+		background: #348cb2 url("images/bg.webp") bottom left;
 		background-repeat: repeat-x;
 		height: 100%;
 		left: 0;
@@ -1079,3 +1079,17 @@ input, select, textarea {
 		#header nav {
 			padding: 0 1em;
 		} }
+/* Mobile usability and accessibility overrides. */
+html { overflow-x: hidden; }
+body { overflow-x: hidden; overflow-y: auto; min-height: 100%; }
+a:focus-visible, button:focus-visible { outline: 3px solid #fff; outline-offset: 4px; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important; scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important; }
+  #wrapper, #header, #overlay, #header nav li { opacity: 1 !important; }
+}
+@media (max-width: 480px) {
+  #header nav ul { display: flex; flex-wrap: wrap; justify-content: center; }
+  #header nav li { min-width: 44px; min-height: 44px; }
+}
